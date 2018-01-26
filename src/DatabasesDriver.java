@@ -15,7 +15,7 @@ public class DatabasesDriver {
 	public static String getStorEID() {
 		return storEID;
 	}
-	public static void setStorEID(String sEID) {
+	public void setStorEID(String sEID) {
 		storEID = sEID;
 	}
 	public static Connection connect() {
