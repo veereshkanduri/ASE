@@ -35,7 +35,7 @@ public class MeetingOrg {
 		String Option = Opt.nextLine().toUpperCase();
 		switch (Option) {
 		case "A": {
-			String f_name, l_name, department, position;
+			/*String f_name, l_name, department, position;
 			Scanner sc;
 			System.out.println("Enter Employee information:");
 			System.out.print("Employee: First name:");
@@ -49,8 +49,10 @@ public class MeetingOrg {
 			department=sc.nextLine();
 			System.out.print("Employee: Position:");
 			sc= new Scanner(System.in);
-			position=sc.nextLine();
-			Employee emp = new Employee( f_name, l_name, department, position);
+			position=sc.nextLine();*/
+			Employee em = new Employee();
+			em.getEmpInfo();
+			Employee emp = new Employee( em.getfName(), em.getlName(),em.getDepartment(), em.getPosition());
 			
 			break;
 		}

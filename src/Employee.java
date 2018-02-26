@@ -3,6 +3,7 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.Scanner;
 
 /**
  * 
@@ -43,6 +44,25 @@ public String getPosition() {
 public void setPosition(String position) {
 	this.position = position;
 }
+@SuppressWarnings("resource")
+public void getEmpInfo()
+{
+	//String f_name, l_name, department, position;
+	Scanner sc;
+	System.out.println("Enter Employee information:");
+	System.out.print("Employee: First name:");
+	sc= new Scanner(System.in);
+	fName=sc.nextLine();
+	System.out.print("Employee: Last name:");
+	sc= new Scanner(System.in);
+	lName=sc.nextLine();
+	System.out.print("Employee: Department :");
+	sc= new Scanner(System.in);
+	department=sc.nextLine();
+	System.out.print("Employee: Position:");
+	sc= new Scanner(System.in);
+	position=sc.nextLine();
+}
 
 Employee(String fname, String lname, String dept, String pos) {
 	// TODO Auto-generated method stub
@@ -72,6 +92,9 @@ catch(Exception e){
 	
 }
 
+public Employee() {
+	// TODO Auto-generated constructor stub
+}
 public void deleteEmployee(int Id)
 {
 	
