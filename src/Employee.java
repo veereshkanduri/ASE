@@ -75,6 +75,32 @@ catch(Exception e){
 public void deleteEmployee(int Id)
 {
 	
+String query = "delete from  employee_Info where emp_Id="+Id;
+	
+	java.sql.Statement st=null;
+try{
+	st= conn.createStatement();
+	st.execute(query);
+	//st.executeQuery(query);
+	System.out.println("Query Generated");
+		
+}
+catch(Exception e){
+	System.out.println("Fail to Save employee information");
+		}
+
+finally {
+	try {
+	//st.close();
+	//conn.close();	
+}
+catch(Exception e){
+	System.out.println("Fail to close connections");
+}}
+
+		
+	
+	
 }
 	
 }
