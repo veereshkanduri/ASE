@@ -26,7 +26,7 @@ public class MeetingOrg {
 		String pass = pas.nextLine();
 		DatabasesDriver db = new DatabasesDriver();
 		EmpLogin emplog = new EmpLogin(user, pass);
-
+		Employee em = new Employee();
 		System.out.println("Enter your choices:" + "\nAdd Employee: A  \t\tEdit Employee: E \t\t Delete Employee: D"
 				+ "\nAdd Room: R  \t\t\tEdit Room: I \t\t\t Delete Room: N"
 				+ "\nNew Meeting: M  \t\tupdate Meeting: U \t\t Delete Meeting: W");
@@ -35,22 +35,7 @@ public class MeetingOrg {
 		String Option = Opt.nextLine().toUpperCase();
 		switch (Option) {
 		case "A": {
-			/*String f_name, l_name, department, position;
-			Scanner sc;
-			System.out.println("Enter Employee information:");
-			System.out.print("Employee: First name:");
-			sc= new Scanner(System.in);
-			f_name=sc.nextLine();
-			System.out.print("Employee: Last name:");
-			sc= new Scanner(System.in);
-			l_name=sc.nextLine();
-			System.out.print("Employee: Department :");
-			sc= new Scanner(System.in);
-			department=sc.nextLine();
-			System.out.print("Employee: Position:");
-			sc= new Scanner(System.in);
-			position=sc.nextLine();*/
-			Employee em = new Employee();
+			
 			em.getEmpInfo();
 			Employee emp = new Employee( em.getfName(), em.getlName(),em.getDepartment(), em.getPosition());
 			
@@ -62,7 +47,8 @@ public class MeetingOrg {
 		
 
 		case "D": {
-			System.out.println(Option);
+			em.getEmpId();
+			em.deleteEmployee(em.geteID()  );
 			break;
 		}
 		case "R": {

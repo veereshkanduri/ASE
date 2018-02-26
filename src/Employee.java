@@ -18,6 +18,8 @@ String fName;
 String lName;
 String department;
 String position;
+int eID;
+Scanner sc;
 DatabasesDriver db = new DatabasesDriver();
 java.sql.Connection conn= db.connect();
 public String getfName() {
@@ -44,11 +46,15 @@ public String getPosition() {
 public void setPosition(String position) {
 	this.position = position;
 }
-@SuppressWarnings("resource")
+
+public int geteID() {
+	return eID;
+}
+public void seteID(int eID) {
+	this.eID = eID;
+}
 public void getEmpInfo()
 {
-	//String f_name, l_name, department, position;
-	Scanner sc;
 	System.out.println("Enter Employee information:");
 	System.out.print("Employee: First name:");
 	sc= new Scanner(System.in);
@@ -94,6 +100,12 @@ catch(Exception e){
 
 public Employee() {
 	// TODO Auto-generated constructor stub
+}
+public void getEmpId(){
+	System.out.println("Enter Employee ID you want to delete:");
+	System.out.print("Employee ID:");
+	sc= new Scanner(System.in);
+	eID=sc.nextInt();
 }
 public void deleteEmployee(int Id)
 {
