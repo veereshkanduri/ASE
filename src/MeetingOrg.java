@@ -27,34 +27,41 @@ public class MeetingOrg {
 		DatabasesDriver db = new DatabasesDriver();
 		EmpLogin emplog = new EmpLogin(user, pass);
 		Employee em = new Employee();
-		System.out.println("Enter your choices:" + "\nAdd Employee: A  \t\tEdit Employee: E \t\t Delete Employee: D \t\t Change Pass: C"
+		System.out.println("Enter your choices:"
+				+ "\nAdd Employee: A  \t\tEdit Employee: E \t\t Delete Employee: D \t Change Pass: C \t Update Emp : P"
 				+ "\nAdd Room: R  \t\t\tEdit Room: I \t\t\t Delete Room: N"
 				+ "\nNew Meeting: M  \t\tupdate Meeting: U \t\t Delete Meeting: W");
 
 		Opt = new Scanner(System.in);
 		String Option = Opt.nextLine().toUpperCase();
 		switch (Option) {
-		case "A": {
-			
+		case "A": 
+
 			em.getEmpInfo();
-			Employee emp = new Employee( em.getfName(), em.getlName(),em.getDepartment(), em.getPosition(), em.getePass());
-			
+			Employee emp = new Employee(em.getfName(), em.getlName(), em.getDepartment(), em.getPosition(),
+					em.getePass());
 			break;
-		}
-		case "E": 
+		
+		case "E":
 			System.out.println(Option);
 			break;
-		case "C": {
+		case "C": 
 			em.getChangePassInfo();
-			em.changePass(Integer.toString(em.geteID())  , em.getePass(), em.getnPass());
-						break;
-		}
-
-		case "D": {
-			em.getEmpId();
-			em.deleteEmployee(em.geteID() );
+			em.changePass(Integer.toString(em.geteID()), em.getePass(), em.getnPass());
 			break;
-		}
+		
+
+		case "D": 
+			em.getEmpId();
+			em.deleteEmployee(em.geteID());
+			break;
+		
+		case "P": 
+			em.getEmpId();
+			em.employeeInfoUpdate(Integer.toString(em.geteID()));
+			break;
+		
+		
 		case "R": {
 			System.out.println(Option);
 			break;
@@ -66,7 +73,7 @@ public class MeetingOrg {
 		case "N": {
 			System.out.println(Option);
 			break;
-			
+
 		}
 		case "M": {
 			System.out.println(Option);
@@ -87,6 +94,5 @@ public class MeetingOrg {
 
 	}
 
-	
 	// emp.deleteEmployee(4);
 }
