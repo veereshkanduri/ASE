@@ -27,7 +27,7 @@ public class MeetingOrg {
 		DatabasesDriver db = new DatabasesDriver();
 		EmpLogin emplog = new EmpLogin(user, pass);
 		Employee em = new Employee();
-		System.out.println("Enter your choices:" + "\nAdd Employee: A  \t\tEdit Employee: E \t\t Delete Employee: D"
+		System.out.println("Enter your choices:" + "\nAdd Employee: A  \t\tEdit Employee: E \t\t Delete Employee: D \t\t Change Pass: C"
 				+ "\nAdd Room: R  \t\t\tEdit Room: I \t\t\t Delete Room: N"
 				+ "\nNew Meeting: M  \t\tupdate Meeting: U \t\t Delete Meeting: W");
 
@@ -37,18 +37,22 @@ public class MeetingOrg {
 		case "A": {
 			
 			em.getEmpInfo();
-			Employee emp = new Employee( em.getfName(), em.getlName(),em.getDepartment(), em.getPosition());
+			Employee emp = new Employee( em.getfName(), em.getlName(),em.getDepartment(), em.getPosition(), em.getePass());
 			
 			break;
 		}
 		case "E": 
 			System.out.println(Option);
 			break;
-		
+		case "C": {
+			em.getChangePassInfo();
+			em.changePass(Integer.toString(em.geteID())  , em.getePass(), em.getnPass());
+						break;
+		}
 
 		case "D": {
 			em.getEmpId();
-			em.deleteEmployee(em.geteID()  );
+			em.deleteEmployee(em.geteID() );
 			break;
 		}
 		case "R": {
