@@ -1,5 +1,7 @@
 
+import java.awt.Frame;
 import java.util.Scanner;
+
 
 /**
  * @author Sukhvir
@@ -17,6 +19,7 @@ public class MeetingOrg {
 		Scanner usr;
 		Scanner pas;
 		Scanner Opt;
+		
 		System.out.println("Login as: Sukh, pass: ss ");
 		System.out.print("Employee ID:");
 		usr = new Scanner(System.in);
@@ -25,21 +28,23 @@ public class MeetingOrg {
 		pas = new Scanner(System.in);
 		String pass = pas.nextLine();
 		DatabasesDriver db = new DatabasesDriver();
-		EmpLogin emplog = new EmpLogin(user, pass);
+		
+		//EmpLogin emplog = new EmpLogin(user, pass);
 		Employee em = new Employee();
-		System.out.println("Enter your choices:"
+		
+		/*System.out.println("Enter your choices:"
 				+ "\nAdd Employee: A  \t\tEdit Employee: E \t\t Delete Employee: D \t Change Pass: C \t Update Emp : P"
 				+ "\nAdd Room: R  \t\t\tEdit Room: I \t\t\t Delete Room: N"
-				+ "\nNew Meeting: M  \t\tupdate Meeting: U \t\t Delete Meeting: W");
+				+ "\nNew Meeting: M  \t\tupdate Meeting: U \t\t Delete Meeting: W");*/
 
 		Opt = new Scanner(System.in);
 		String Option = Opt.nextLine().toUpperCase();
 		switch (Option) {
 		case "A": 
-
 			em.getEmpInfo();
 			Employee emp = new Employee(em.getfName(), em.getlName(), em.getDepartment(), em.getPosition(),
-					em.getePass());
+			em.getePass());
+			
 			break;
 		
 		case "E":
